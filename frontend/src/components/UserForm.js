@@ -8,7 +8,7 @@ const UserForm = () => {
 
   // Fetch users when the component mounts
   useEffect(() => {
-    axios.get('http://localhost:5000/api/users')
+    axios.get('https://my-app-hfgn.onrender.com/api/users')
       .then(response => setUsers(response.data))
       .catch(err => console.error(err));
   }, []);
@@ -18,14 +18,14 @@ const UserForm = () => {
     const newUser = { name, email };
 
     // Send new user data to the backend
-    await axios.post('http://localhost:5000/api/users', newUser);
+    await axios.post('https://my-app-hfgn.onrender.com/api/users', newUser);
 
     // Clear input fields
     setName('');
     setEmail('');
 
     // Refresh the list of users
-    axios.get('http://localhost:5000/api/users')
+    axios.get('https://my-app-hfgn.onrender.com/api/users')
       .then(response => setUsers(response.data))
       .catch(err => console.error(err));
   };

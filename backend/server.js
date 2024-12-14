@@ -19,6 +19,8 @@ const pool = new Pool({
 
 // Middleware
 app.use(cors());
+app.use(cors({ origin: 'https://my-app-hfgn.onrender.com' }));
+
 app.use(express.json());
 
 // Table creation query (this will create the table if it doesn't already exist)
